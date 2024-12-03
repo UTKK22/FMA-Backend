@@ -24,7 +24,7 @@ const userSchema = new Schema({
     nationality: { type: String,default: "Indian" }, 
     photo: { type:String,default:"Photo"}, 
     cards: [
-        { cardNumber: { type: String }, expiryDate: { type: String } } 
+        { cardName:{type:String},nameOnCard:{type:String},cvv:{type:Number},cardNumber: { type: Number }, expiryDate: { type: String } } 
     ],
    
 });
