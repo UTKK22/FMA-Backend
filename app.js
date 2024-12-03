@@ -6,11 +6,12 @@ const bodyParser = require('body-parser');
 const router = express.Router();
 const Product = require('./models/Products.js');
 const Category = require('./models/Category.js'); 
+const dotenv=require('dotenv');
 const jwt = require('jsonwebtoken');
 const cors = require('cors'); 
 const Address = require('./models/Address.js')
 const path=require('path')
-
+const port=process.env.PORT||4000;
 app.use(cors({
   origin: ['http://localhost:5173', 'https://fma-frontend.onrender.com'], 
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -34,7 +35,7 @@ const JWT_SECRET = "verifytoken";
 const mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://admin:admin@cluster0.jpkgl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(console.log("db connect"));
 
-app.listen(3000,function(){
+app.listen(port,function(){
   console.log('listening on port 3000');
 });
 
