@@ -35,8 +35,8 @@ const JWT_SECRET = "verifytoken";
 const mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://admin:admin@cluster0.jpkgl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(console.log("db connect"));
 
-app.listen(port,function(){
-  console.log('listening on port 3000');
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is running on http://0.0.0.0:${port}`);
 });
 
 
