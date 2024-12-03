@@ -1,6 +1,5 @@
 const express = require('express');
-const app = require('express')();
-app.use(express.json());
+const app = express();
 const bcrypt = require('bcryptjs');
 const isAuth = require('./routes/Auth.js');
 const bodyParser = require('body-parser');
@@ -10,7 +9,7 @@ const Category = require('./models/Category.js');
 const jwt = require('jsonwebtoken');
 const cors = require('cors'); 
 const Address = require('./models/Address.js')
-
+const path=require('path')
 
 app.use(cors({
   origin: ['http://localhost:5173', 'https://fma-frontend.onrender.com'], 
