@@ -19,7 +19,7 @@ app.use(cors({
 }));
 // app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'build'), {
+app.use(express.static(path.join(__dirname, 'js'), {
   setHeaders: (res, filePath) => {
     if (filePath.endsWith('.js')) {
       res.setHeader('Content-Type', 'application/javascript');
